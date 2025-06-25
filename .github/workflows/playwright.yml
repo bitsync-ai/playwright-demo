@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main, master]
 
+permissions:
+  contents: write # ✅ This allows GitHub Actions to push to gh-pages
+
 jobs:
   playwright-tests:
     timeout-minutes: 5
