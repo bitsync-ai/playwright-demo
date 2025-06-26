@@ -30,9 +30,6 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test --workers=3
 
-      - name: Generate HTML report
-        run: npx playwright show-report --output=playwright-report
-
       - name: Upload Playwright report as artifact
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
