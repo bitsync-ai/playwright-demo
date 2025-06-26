@@ -30,10 +30,8 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test --workers=3
 
-      - name: Debug check report folder
-        run: |
-          echo "Report folder contents:"
-          ls -lah playwright-report || echo "No report folder found"
+      - name: Generate HTML report manually
+        run: npx playwright show-report --output=playwright-report
 
       - name: Upload Playwright report as artifact
         if: ${{ !cancelled() }}
